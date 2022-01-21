@@ -8,3 +8,11 @@ class DBConfigurations:
     postgres_db = os.getenv("POSTGRES_DB")
     postgres_server = os.getenv("POSTGRES_SERVER")
     sql_alchemy_db_url = f"postgresql://{postgres_username}:{postgres_password}@{postgres_server}:{postgres_port}/{postgres_db}"
+
+
+class APIConfigurations:
+    title = os.getenv("API_TITLE", "Model_DB_Service")
+    description = os.getenv(
+        "API_DESCRIPTION", "machine learning system training patterns"
+    )
+    version = os.getenv("API_VERSION", "0.1")
