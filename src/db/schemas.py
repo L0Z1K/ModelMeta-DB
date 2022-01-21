@@ -9,6 +9,10 @@ class ProjectBase(BaseModel):
     description: Optional[str]
 
 
+class ProjectCreate(ProjectBase):
+    pass
+
+
 class Project(ProjectBase):
     project_id: int
     created_datetime: datetime.datetime
@@ -21,6 +25,10 @@ class ModelBase(BaseModel):
     project_id: str
     model_name: str
     description: Optional[str]
+
+
+class ModelCreate(ModelBase):
+    pass
 
 
 class Model(ModelBase):
@@ -40,6 +48,18 @@ class ExperimentBase(BaseModel):
     test_dataset: Optional[str]
     evaluations: Optional[Dict]
     artifact_file_paths: Optional[Dict]
+
+
+class ExperimentCreate(ExperimentBase):
+    pass
+
+
+class ExperimentEvaluations(BaseModel):
+    evaluations: Dict
+
+
+class ExperimentArtifactFilePaths(BaseModel):
+    artifact_file_paths: Dict
 
 
 class Experiment(ExperimentBase):
